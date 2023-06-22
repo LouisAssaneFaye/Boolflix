@@ -1,6 +1,6 @@
 <template>
      <main>
-        <searchBar @search="getSearchedFilm" />
+        <searchBar @search="getSearchedFilm, getSearchedSerie" />
         <div v-for="filmObj in filmList">
             
             <div class="titolo">
