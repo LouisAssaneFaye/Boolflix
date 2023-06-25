@@ -18,9 +18,16 @@
                 </span>
             </div>
             
-            <div class="voto">
-                {{ filmElement.vote_average }}
-                
+            <div class="voto" v-for="n in Math.round(filmElement.vote_average / 2)">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="voto" v-for="n in (5 - Math.round(filmElement.vote_average / 2))">
+                <i class="fa-regular fa-star"></i>
+            </div>
+
+            <div class="cover">
+                <img :src="`https://image.tmdb.org/t/p/w1280/${filmElement.backdrop_path}`" alt="film cover" >
             </div>
 
         </div>
@@ -61,7 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 img{
-    width: 1rem;
+    width: 3rem;
 }
-    
+
 </style>

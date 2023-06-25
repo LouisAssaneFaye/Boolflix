@@ -10,21 +10,30 @@
 
             </div>
              
-            <div class="lingua">0
+            <div class="lingua">
                 <img v-if="isLanguageAvailable(serieElement.original_language)" :src="getImagePath(serieElement.original_language)" alt="language">
                 <span v-else>
                     {{ serieElement.original_language }}
                 </span>
             </div>
             
-            <div class="voto">
-                {{ serieElement.vote_average }}
-                
+            <div class="voto" v-for="n in Math.round(serieElement.vote_average / 2)">
+                <i class="fa-solid fa-star"></i>
             </div>
+
+            <div class="voto" v-for="n in (5 - Math.round(serieElement.vote_average / 2))">
+                <i class="fa-regular fa-star"></i>
+            </div>
+
+            <div class="cover">
+                <img :src="`https://image.tmdb.org/t/p/w342/${serieElement.backdrop_path}`" alt="film cover" >
+            </div>
+
         </div>    
 </template>
 <script>
 export default {
+    
     name:'',
     data(){
         return{
@@ -56,7 +65,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 img{
-    width: 1rem;
+    width: 3rem;
 }
     
 </style>
