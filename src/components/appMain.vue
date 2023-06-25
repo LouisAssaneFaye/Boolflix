@@ -1,5 +1,5 @@
 <template>
-    <searchBar @search="getMoviesAndSeries" />
+    <appHeader @search="getMoviesAndSeries" />
     <div class="films">
         <films :filmList="filmList" />
     </div>
@@ -9,9 +9,9 @@
 </template>
 
 <script>
+import appHeader from './appHeader.vue';
 import films from './films.vue';
 import series from './series.vue';
-import searchBar from './searchBar.vue';
 import axios from 'axios';
 export default{
   name:'appMain',
@@ -26,10 +26,10 @@ export default{
 
   },
   components:{
+    appHeader,
     films,
     series,
-    searchBar
-  },
+},
   methods:{
         getMoviesAndSeries(arg){
             this.getSearchedFilm(arg),

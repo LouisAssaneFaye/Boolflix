@@ -3,7 +3,7 @@ import appMain from './components/appMain.vue';
 export default{
   name:'App',
   components:{
-    appMain,
+    appMain
   }
 }
 
