@@ -1,5 +1,7 @@
 <template>
-     <singleSerie v-for="serieObj in serieList" :serieElement = 'serieObj' />
+     <div class="series">
+        <singleSerie v-for="serieObj in serieList" :serieElement = 'serieObj' />
+     </div>
 </template>
 <script>
 import singleSerie from './singleSerie.vue';
@@ -20,5 +22,12 @@ export default{
 }
 </script>
 <style lang="scss" scoped>
+div.series{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  background-color: grey;
+}
     
 </style>

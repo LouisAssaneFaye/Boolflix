@@ -10,9 +10,12 @@ export default{
 </script>
 
 <template>
-  <appMain />
+  <div class="main">
+    <appMain />
+  </div>
 </template>
 
 <style lang="scss">
 @import './styles/general.scss'
+
 </style>

@@ -1,11 +1,13 @@
 <template>
-    <appHeader @search="getMoviesAndSeries" />
-    <div class="films">
-        <films :filmList="filmList" />
-    </div>
-    <div class="series">
-        <series :serieList="serieList" />
-    </div>
+    <main>
+        <appHeader @search="getMoviesAndSeries" />
+         <div class="films">
+            <films :filmList="filmList" />
+         </div>
+         <div class="series">
+           <series :serieList="serieList" />
+         </div>
+    </main>
 </template>
 
 <script>
@@ -71,5 +73,9 @@ export default{
 </script>
 
 <style lang="scss" scoped>
+main{
+    background-color: gray;
+    height: 100vh;
+}
     
 </style>
